@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Tiger Puri">
+  <meta name="description" content="Coding Exercise Guessing Game">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Tiger Puri Guessing Game</title>
+</head>
+
+<body>
+  <h1>Tiger Puri Guessing Game</h1><br>
+  <p id="displaytext_1">Replace this content with scripted content</p>
+
+    <script type="text/javascript">
+
+      // Initialize a random number between 1 and 10
+      // let randomNumber = Math.floor(Math.random() * 10) + 1;
+      randomNumber = Math.floor(Math.random() * 10) +1;
+      document.getElementById("displaytext_1").innerHTML = randomNumber;
+      console.log(randomNumber);
+
+      // Initialize variables to keep track of guesses
+      let guess;
+      let attempts = 0;
+
+      // Repeatedly prompt the user for a guess until they guess correctly
+      while (true) {
+          // Prompt the player to make a guess
+          guess = parseInt(prompt("Guess a number between 1 and 10: "), 10);
+          attempts++;
+
+          // Check if the guess is correct, too high, or too low
+          if (guess === randomNumber) {
+              alert(`Correct! You guessed the number in ${attempts} attempts.`);
+              break; // Exit the loop if the guess is correct
+          } else if (guess > randomNumber) {
+              alert("Your guess is too high. Try again.");
+          } else if (guess < randomNumber) {
+              alert("Your guess is too low. Try again.");
+          }
+      }
+
+    </script>
+
+
+</body>
